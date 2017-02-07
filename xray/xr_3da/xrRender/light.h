@@ -1,10 +1,10 @@
 #pragma once
 
-#include "..\ispatial.h"
+#include "../ISpatial.h"
 #if RENDER==R_R2
-	#include "light_package.h"
+	#include "Light_Package.h"
 	#include "light_smapvis.h"
-	#include "light_GI.h"
+	#include "light_gi.h"
 #endif
 
 #define MIN_VIRTUAL_SIZE 0.01f
@@ -123,7 +123,7 @@ public:
 	void			xform_calc				();
 	void			vis_prepare				();
 	void			vis_update				();
-	void			export 					(light_Package& dest);
+	void			Export 					(light_Package& dest);
 #endif
 
 	float			get_LOD					();
