@@ -1205,7 +1205,7 @@
     </ClCompile>
     <ClCompile Include="x_ray.cpp" />
     <ClCompile Include="IInputReceiver.cpp" />
-    <ClCompile Include="Xr_input.cpp" />
+    <ClCompile Include="xr_input.cpp" />
     <ClCompile Include="ISheduled.cpp" />
     <ClCompile Include="xrSheduler.cpp" />
     <ClCompile Include="IRenderable.cpp" />
