@@ -140,7 +140,7 @@
 #define QEPSILON				0.00001f
 
 template <class T>
-struct XRCORE_API _quaternion {
+struct _quaternion {
 public:
 	typedef T				TYPE;
 	typedef _quaternion<T>	Self;
@@ -159,10 +159,7 @@ private:
 		
 		return d;
 	}
-	IC T _acos_(T x)
-	{
-		return PI_DIV_2 - _asin_(x);
-	}
+	IC T _acos_(T x) { return PI_DIV_2 - _asin_(x); }
 public:
 	T x,y,z,w;
 
