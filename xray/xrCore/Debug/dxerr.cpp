@@ -21,8 +21,9 @@
 #include <d3d9.h>
 #include <audiodefs.h>
 #include <dsound.h>
-
+#ifndef DIRECTINPUT_VERSION
 #define DIRECTINPUT_VERSION 0x800
+#endif
 #include <dinput.h>
 #include <dinputd.h>
 #endif
