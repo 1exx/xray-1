@@ -6,13 +6,13 @@
 #define AFX_LEVEL_H__38F63863_DB0C_494B_AFAB_C495876EC671__INCLUDED_
 #pragma once
 
-#include "../igame_level.h"
-#include "../../xrNetServer/net_client.h"
+#include "xr_3da/IGame_Level.h"
+#include "xrNetServer/NET_Client.h"
 #include "script_export_space.h"
-#include "../StatGraph.h"
+#include "xr_3da/StatGraph.h"
 #include "xrMessages.h"
 #include "alife_space.h"
-#include "xrDebug.h"
+#include "xrCore/xrDebug.h"
 #include "xrServer.h"
 #include "battleye_system.h"
 

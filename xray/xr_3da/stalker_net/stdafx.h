@@ -41,4 +41,4 @@
 #define NO_XRNEW
 #undef	min
 #undef	max
-#include "xrcore.h"
+#include "xrCore/xrCore.h"

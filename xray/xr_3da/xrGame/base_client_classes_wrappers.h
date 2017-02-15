@@ -10,17 +10,17 @@
 
 #include "script_export_space.h"
 #include "base_client_classes.h"
-#include "../engineapi.h"
-#include "../ispatial.h"
-#include "../isheduled.h"
-#include "../irenderable.h"
-#include "../icollidable.h"
-#include "../xr_object.h"
+#include "xr_3da/EngineAPI.h"
+#include "xr_3da/ISpatial.h"
+#include "xr_3da/ISheduled.h"
+#include "xr_3da/IRenderable.h"
+#include "xr_3da/ICollidable.h"
+#include "xr_3da/xr_object.h"
 #include "entity.h"
 #include "ai_space.h"
 #include "script_engine.h"
-#include <typelist.h>
-#include <hierarchygenerators.h>
+#include <loki/Typelist.h>
+#include <loki/HierarchyGenerators.h>
 #include "xrServer_Object_Base.h"
 
 template <typename _1, typename _2>
