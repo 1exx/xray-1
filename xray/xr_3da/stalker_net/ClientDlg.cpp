@@ -230,8 +230,9 @@ END_MESSAGE_MAP()
 // CClientDlg message handlers
 /////////////////////////////////////////////////////////
 #include <Dplay/dplay8.h>
-#include <dxerr.h>
+#include "xrCore\Debug\dxerr.h"
 #include <vector>
+#pragma comment(lib,"Dplay/dxguid.lib")
 IDirectPlay8Client 		*g_pClient;
 IDirectPlay8Address		*g_pClientDeviceAddress	;
 
