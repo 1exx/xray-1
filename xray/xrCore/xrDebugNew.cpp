@@ -3,17 +3,13 @@
 
 #include "xrdebug.h"
 
-#include "dxerr.h"
+#include "Debug/dxerr.h"
 
 #pragma warning(push)
 #pragma warning(disable:4995)
 #include <malloc.h>
 #include <direct.h>
 #pragma warning(pop)
-
-
-
-
 
 // alpet: user-friendly crashes )
 #define ERROR_MESSAGES_RU
@@ -55,7 +51,6 @@
 #define  ERR_ILLEGAL_INSTR		"illegal instruction"
 #define  ERR_TERMINATION_3		"termination with exit code 3"
 
-
 #endif
 
 
@@ -79,12 +74,6 @@ extern bool force_flush_log;
     #	define DEBUG_INVOKE	__asm int 3
 #endif
         static BOOL			bException	= FALSE;
-#endif
-
-#ifndef _M_AMD64
-#	ifndef __BORLANDC__
-#		pragma comment(lib,"dxerr.lib")
-#	endif
 #endif
 
 #include <dbghelp.h>						// MiniDump flags
@@ -417,7 +406,7 @@ LPCSTR xrDebug::error2string	(long code)
 
 #ifdef _M_AMD64
 #else
-	result				= DXGetErrorDescription	(code);
+	DXGetErrorDescription(code, desc_storage, sizeof(desc_storage));
 #endif
 	if (0==result) 
 	{
@@ -858,10 +847,11 @@ LONG WINAPI UnhandledFilter	(_EXCEPTION_POINTERS *pExceptionInfo)
 //		::SetUnhandledExceptionFilter	(UnhandledFilter);	// exception handler to all "unhandled" exceptions
     }
 #else
+/*
     typedef int		(__cdecl * _PNH)( size_t );
     _CRTIMP int		__cdecl _set_new_mode( int );
     _CRTIMP _PNH	__cdecl _set_new_handler( _PNH );
-
+*/
 #ifndef USE_BUG_TRAP
 	void _terminate		()
 	{
@@ -905,15 +895,6 @@ LONG WINAPI UnhandledFilter	(_EXCEPTION_POINTERS *pExceptionInfo)
 	//	FATAL					("Unexpected application termination");
 	}
 #endif // USE_BUG_TRAP
-
-	void debug_on_thread_spawn			()
-	{
-#ifdef USE_BUG_TRAP
-		BT_SetTerminate					();
-#else // USE_BUG_TRAP
-		std::set_terminate				(_terminate);
-#endif // USE_BUG_TRAP
-	}
 
 	static void handler_base				(LPCSTR reason_string)
 	{
@@ -1032,47 +1013,43 @@ LONG WINAPI UnhandledFilter	(_EXCEPTION_POINTERS *pExceptionInfo)
 		handler_base					(ERR_TERMINATION_3);
 	}
 
+	void debug_on_thread_spawn()
+	{
+#ifdef USE_BUG_TRAP
+		BT_SetTerminate();
+#else // USE_BUG_TRAP
+		//std::set_terminate				(_terminate);
+#endif // USE_BUG_TRAP
+
+		_set_abort_behavior(0, _WRITE_ABORT_MSG | _CALL_REPORTFAULT);
+		signal(SIGABRT, abort_handler);
+		signal(SIGABRT_COMPAT, abort_handler);
+		signal(SIGFPE, floating_point_handler);
+		signal(SIGILL, illegal_instruction_handler);
+		signal(SIGINT, 0);
+		// signal (SIGSEGV, storage_access_handler);
+		signal(SIGTERM, termination_handler);
+
+		_set_invalid_parameter_handler(&invalid_parameter_handler);
+
+		_set_new_mode(1);
+		_set_new_handler(&out_of_memory_handler);
+		// std::set_new_handler (&std_out_of_memory_handler);
+
+		_set_purecall_handler(&pure_call_handler);
+
+#if 0// should be if we use exceptions
+		std::set_unexpected(_terminate);
+#endif
+	}
+
     void	xrDebug::_initialize		(const bool &dedicated)
     {
 		debug_on_thread_spawn			();
-
-		_set_abort_behavior				(0,_WRITE_ABORT_MSG | _CALL_REPORTFAULT);
-		signal							(SIGABRT,			abort_handler);
-		signal							(SIGABRT_COMPAT,	abort_handler);
-		signal							(SIGFPE,			floating_point_handler);
-		signal							(SIGILL,			illegal_instruction_handler);
-		signal							(SIGINT,			0);
-//		signal							(SIGSEGV,			storage_access_handler);
-		signal							(SIGTERM,			termination_handler);
-
-		_set_invalid_parameter_handler	(&invalid_parameter_handler);
-
-		_set_new_mode					(1);
-		_set_new_handler				(&out_of_memory_handler);
-		std::set_new_handler			(&std_out_of_memory_handler);
-
-		_set_purecall_handler			(&pure_call_handler);
-
-#if 0// should be if we use exceptions
-		std::set_unexpected				(_terminate);
-#endif
 
 #ifdef USE_BUG_TRAP
 		SetupExceptionHandler			(dedicated);
 #endif // USE_BUG_TRAP
 		previous_filter					= ::SetUnhandledExceptionFilter(UnhandledFilter);	// exception handler to all "unhandled" exceptions
-
-#if 0
-		struct foo {static void	recurs	(const u32 &count)
-		{
-			if (!count)
-				return;
-
-			_alloca			(4096);
-			recurs			(count - 1);
-		}};
-		foo::recurs			(u32(-1));
-		std::terminate		();
-#endif // 0
 	}
 #endif

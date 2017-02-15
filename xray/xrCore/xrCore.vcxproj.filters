@@ -70,6 +70,9 @@
     <Filter Include="Compression\lzo">
       <UniqueIdentifier>{dda72662-18b0-4e41-b8f8-9084e81f3fc7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Debug core\DxErr">
+      <UniqueIdentifier>{97e1492d-75bb-44cc-8283-fed86ef4ef6c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FTimer.cpp">
@@ -120,9 +123,6 @@
     <ClCompile Include="LocatorAPI_defs.cpp">
       <Filter>FS</Filter>
     </ClCompile>
-    <ClCompile Include="LocatorAPI_Notifications.cpp">
-      <Filter>FS</Filter>
-    </ClCompile>
     <ClCompile Include="log.cpp">
       <Filter>FS</Filter>
     </ClCompile>
@@ -167,9 +167,6 @@
     </ClCompile>
     <ClCompile Include="xrMemory_subst_msvc.cpp">
       <Filter>Memory manager</Filter>
-    </ClCompile>
-    <ClCompile Include="xrDebug.cpp">
-      <Filter>Debug core</Filter>
     </ClCompile>
     <ClCompile Include="xrDebugNew.cpp">
       <Filter>Debug core</Filter>
@@ -250,6 +247,9 @@
       <Filter>Compression\lzo</Filter>
     </ClCompile>
     <ClCompile Include="xrSyncronize.cpp" />
+    <ClCompile Include="Debug\dxerr.cpp">
+      <Filter>Debug core\DxErr</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FTimer.h">
@@ -520,6 +520,9 @@
       <Filter>Compression\lzo</Filter>
     </ClInclude>
     <ClInclude Include="xrSyncronize.h" />
+    <ClInclude Include="Debug\dxerr.h">
+      <Filter>Debug core\DxErr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="xrCore.rc">
@@ -530,8 +533,16 @@
     <CustomBuildStep Include="FileSystem.h">
       <Filter>FS</Filter>
     </CustomBuildStep>
-    <CustomBuildStep Include="LocatorAPI_Notifications.h">
-      <Filter>FS</Filter>
-    </CustomBuildStep>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\DXGetErrorDescription.inl">
+      <Filter>Debug core\DxErr</Filter>
+    </None>
+    <None Include="Debug\DXGetErrorString.inl">
+      <Filter>Debug core\DxErr</Filter>
+    </None>
+    <None Include="Debug\DXTrace.inl">
+      <Filter>Debug core\DxErr</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -7,9 +7,6 @@
     <Filter Include="3DNow!">
       <UniqueIdentifier>{b07f69e5-54c4-44da-81c9-c989ee9ee19d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SSE">
-      <UniqueIdentifier>{313d07ee-d4b4-48f2-86f1-95fad97b483b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Generic x86">
       <UniqueIdentifier>{6fd076bd-aef2-4675-a66c-4097fa8098de}</UniqueIdentifier>
     </Filter>
@@ -24,9 +21,6 @@
     <ClCompile Include="3DNow!Lib.cpp">
       <Filter>3DNow!</Filter>
     </ClCompile>
-    <ClCompile Include="xrBoneLerp_3DNow!.cpp">
-      <Filter>3DNow!</Filter>
-    </ClCompile>
     <ClCompile Include="xrM44mul_3DNow!.cpp">
       <Filter>3DNow!</Filter>
     </ClCompile>
@@ -35,21 +29,6 @@
     </ClCompile>
     <ClCompile Include="xrMemFill32_3DNow!.cpp">
       <Filter>3DNow!</Filter>
-    </ClCompile>
-    <ClCompile Include="xrSkin1W_3DNow!.cpp">
-      <Filter>3DNow!</Filter>
-    </ClCompile>
-    <ClCompile Include="xrSkin2W_3DNow!.cpp">
-      <Filter>3DNow!</Filter>
-    </ClCompile>
-    <ClCompile Include="xrSkin1W_SSE.cpp">
-      <Filter>SSE</Filter>
-    </ClCompile>
-    <ClCompile Include="xrSkin2W_SSE.cpp">
-      <Filter>SSE</Filter>
-    </ClCompile>
-    <ClCompile Include="xrBoneLerp.cpp">
-      <Filter>Generic x86</Filter>
     </ClCompile>
     <ClCompile Include="xrM44mul.cpp">
       <Filter>Generic x86</Filter>
