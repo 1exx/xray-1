@@ -212,43 +212,53 @@ namespace CPU
 	}
 };
 
+bool g_initialize_cpu_called = false;
+
 //------------------------------------------------------------------------------------
 void _initialize_cpu	(void) 
 {
-//	Msg("* Detected CPU: %s %s, F%d/M%d/S%d, %.2f mhz, %d-clk 'rdtsc'",
-	Msg("* Detected CPU: %s %s, F%d/M%d/S%d",
-		CPU::ID.v_name,CPU::ID.model_name,
-		CPU::ID.family,CPU::ID.model,CPU::ID.stepping
-//		float(CPU::clk_per_second/u64(1000000)),
-//		u32(CPU::clk_overhead)
+	Msg("* Detected CPU: %s [%s], F%d/M%d/S%d, %.2f mhz, %d-clk 'rdtsc'\n",
+		CPU::ID.model_name, CPU::ID.v_name,
+		CPU::ID.family, CPU::ID.model, CPU::ID.stepping,
+		float(CPU::clk_per_second / u64(1000000)),
+		u32(CPU::clk_overhead)
 		);
 
 //	DUMP_PHASE;
 
-	if (strstr(Core.Params,"-x86"))		{
-		CPU::ID.feature	&= ~_CPU_FEATURE_3DNOW	;
-		CPU::ID.feature	&= ~_CPU_FEATURE_SSE	;
-		CPU::ID.feature	&= ~_CPU_FEATURE_SSE2	;
-		CPU::ID.feature	&= ~_CPU_FEATURE_SSE3	;
-		CPU::ID.feature	&= ~_CPU_FEATURE_SSE41	;
-		CPU::ID.feature	&= ~_CPU_FEATURE_SSE42	;
+	if (strstr(Core.Params,"-x86"))
+	{
+		CPU::ID.feature &= ~_CPU_FEATURE_MMX;
+		CPU::ID.feature &= ~_CPU_FEATURE_3DNOW;
+		CPU::ID.feature &= ~_CPU_FEATURE_SSE;
+		CPU::ID.feature &= ~_CPU_FEATURE_SSE2;
+		CPU::ID.feature &= ~_CPU_FEATURE_SSE3;
+		CPU::ID.feature &= ~_CPU_FEATURE_SSSE3;
+		CPU::ID.feature &= ~_CPU_FEATURE_SSE4_1;
+		CPU::ID.feature &= ~_CPU_FEATURE_SSE4_2;
 	};
 
-	string128	features;	strcpy_s(features,sizeof(features),"RDTSC");
-    if (CPU::ID.feature&_CPU_FEATURE_MMX)	strcat(features,", MMX");
-    if (CPU::ID.feature&_CPU_FEATURE_3DNOW)	strcat(features,", 3DNow!");
-    if (CPU::ID.feature&_CPU_FEATURE_SSE)	strcat(features,", SSE");
-    if (CPU::ID.feature&_CPU_FEATURE_SSE2)	strcat(features,", SSE2");
-	if (CPU::ID.feature&_CPU_FEATURE_SSE3)	strcat(features,", SSE3");
-	if (CPU::ID.feature&_CPU_FEATURE_SSE41)	strcat(features,", SSE4.1");
-	if (CPU::ID.feature&_CPU_FEATURE_SSE42)	strcat(features,", SSE4.2");
+	string128 features;
+	strcpy_s(features,sizeof(features),"RDTSC");
+    if (CPU::ID.feature&_CPU_FEATURE_MMX) strcat(features, ", MMX");
+    if (CPU::ID.feature&_CPU_FEATURE_3DNOW) strcat(features, ", 3DNow!");
+    if (CPU::ID.feature&_CPU_FEATURE_SSE) strcat(features, ", SSE");
+    if (CPU::ID.feature&_CPU_FEATURE_SSE2) strcat(features, ", SSE2");
+    if (CPU::ID.feature&_CPU_FEATURE_SSE3) strcat(features, ", SSE3");
+    if (CPU::ID.feature&_CPU_FEATURE_SSSE3) strcat(features, ", SSSE3");
+    if (CPU::ID.feature&_CPU_FEATURE_SSE4_1) strcat(features, ", SSE4.1");
+    if (CPU::ID.feature&_CPU_FEATURE_SSE4_2) strcat(features, ", SSE4.2");
+    if (CPU::ID.feature&_CPU_FEATURE_HTT) strcat(features, ", HTT");
 	Msg("* CPU Features: %s\n",features);
+	Msg("* CPU cores/threads: %d/%d\n", CPU::ID.n_cores, CPU::ID.n_threads);
 
 	Fidentity.identity		();	// Identity matrix
 	Didentity.identity		();	// Identity matrix
 	pvInitializeStatics		();	// Lookup table for compressed normals
 	FPU::initialize			();
 	_initialize_cpu_thread	();
+
+	g_initialize_cpu_called = true;
 }
 
 #ifdef M_BORLAND
