@@ -9,11 +9,11 @@
 
 #pragma once
 
-#include "../xrCore/xrCore.h"
+#include "xrCore/xrCore.h"
 
 #pragma warning(push)
 #pragma warning(disable:4995)
-#include <dplay8.h>
+#include <Dplay/dplay8.h>
 #pragma warning(pop)
 
 #include "NET_Shared.h"

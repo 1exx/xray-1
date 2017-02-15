@@ -114,88 +114,62 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Mixed|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="$(SolutionDir)Common.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Mixed|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="$(SolutionDir)Common.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="$(SolutionDir)Common.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="$(SolutionDir)Common.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="$(SolutionDir)Common.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="$(SolutionDir)Common.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="$(SolutionDir)Common.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="$(SolutionDir)Common.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\..\output\bin\Debug\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\output\bin\x64\Debug\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\..\output\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\output\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PostBuildEventUseInBuild>
     <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</PostBuildEventUseInBuild>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\..\output\bin\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|Win32'">$(SolutionDir)..\..\output\bin\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\output\bin\x64\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|x64'">$(SolutionDir)..\..\output\bin\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\..\output\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|Win32'">$(SolutionDir)..\..\output\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\output\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|x64'">$(SolutionDir)..\..\output\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|Win32'">true</IgnoreImportLibrary>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|x64'">true</IgnoreImportLibrary>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|Win32'">false</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|x64'">false</LinkIncremental>
     <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</PostBuildEventUseInBuild>
     <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|Win32'">false</PostBuildEventUseInBuild>
     <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</PostBuildEventUseInBuild>
     <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|x64'">false</PostBuildEventUseInBuild>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Mixed|Win32'">$(SolutionDir)..\..\output\bin\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Mixed|x64'">$(SolutionDir)..\..\output\bin\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Mixed|Win32'">$(SolutionDir)..\..\output\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Mixed|x64'">$(SolutionDir)..\..\output\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Mixed|Win32'">true</IgnoreImportLibrary>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Mixed|x64'">true</IgnoreImportLibrary>
     <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Mixed|Win32'">false</PostBuildEventUseInBuild>
     <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Mixed|x64'">false</PostBuildEventUseInBuild>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\..\xray\xrLua\src;$(SolutionDir)..\..\3rd party\FreeImage\FreeImage\Source;$(SolutionDir)..\..\xray\xrCore;$(SolutionDir)..\..\3rd party\MagicSoftware\FreeMagic\Include;$(SolutionDir)..\..\3rd party\OpenAL\Include;$(SolutionDir)..\..\3rd party\luabind_old\luabind;$(SolutionDir)..\..\3rd party\loki;$(SolutionDir)..\..\3rd party\eax\Include;$(SolutionDir)..\..\3rd party\boost;$(WindowsSdkDir)include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|Win32'">$(SolutionDir)..\..\3rd party\stlport\stlport;$(SolutionDir)..\..\xray\xrLua\src;$(SolutionDir)..\..\3rd party\FreeImage\FreeImage\Source;$(SolutionDir)..\..\xray\xrCore;$(SolutionDir)..\..\3rd party\MagicSoftware\FreeMagic\Include;$(SolutionDir)..\..\3rd party\OpenAL\Include;$(SolutionDir)..\..\3rd party\luabind_old\luabind;$(SolutionDir)..\..\3rd party\loki;$(SolutionDir)..\..\3rd party\eax\Include;$(SolutionDir)..\..\3rd party\boost;$(WindowsSdkDir)include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\xray\xrLua\src;$(SolutionDir)..\..\3rd party\FreeImage\FreeImage\Source;$(SolutionDir)..\..\xray\xrCore;$(SolutionDir)..\..\3rd party\MagicSoftware\FreeMagic\Include;$(SolutionDir)..\..\3rd party\OpenAL\Include;$(SolutionDir)..\..\3rd party\luabind_old\luabind;$(SolutionDir)..\..\3rd party\loki;$(SolutionDir)..\..\3rd party\eax\Include;$(SolutionDir)..\..\3rd party\boost;$(WindowsSdkDir)include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|x64'">$(SolutionDir)..\..\xray\xrLua\src;$(SolutionDir)..\..\3rd party\FreeImage;$(SolutionDir)..\..\xray\xrCore;$(SolutionDir)..\..\3rd party\MagicSoftware\FreeMagic\Include;C:\Program Files %28x86%29\OpenAL 1.1 SDK\include;$(SolutionDir)..\..\3rd party\luabind_old\luabind;$(SolutionDir)..\..\3rd party\loki;$(SolutionDir)..\..\3rd party\eax\Include;$(SolutionDir)..\..\3rd party\Xiph\Include;$(SolutionDir)..\..\3rd party\boost;$(WindowsSdkDir)include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(SolutionDir)..\..\3rd party\OpenAL\libs\Win32;$(SolutionDir)..\..\3rd party\eax;$(SolutionDir)..\..\output\libraries;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|Win32'">$(SolutionDir)..\..\3rd party\stlport\lib;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(SolutionDir)..\..\3rd party\OpenAL\libs\Win32;$(SolutionDir)..\..\3rd party\eax;$(SolutionDir)..\..\output\libraries;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x64;$(SolutionDir)..\..\3rd party\OpenAL\libs\Win64;$(SolutionDir)..\..\3rd party\eax;$(SolutionDir)..\..\output\libraries\x64\;$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSdkDir)lib\x64</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|x64'">$(SolutionDir)..\..\3rd party\MagicSoftware\FreeMagic\Library\ReleaseDLL;$(SolutionDir)..\..\3rd party\FreeImage;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(SolutionDir)..\..\3rd party\Xiph\Libs;C:\Program Files %28x86%29\OpenAL 1.1 SDK\libs\Win32;$(SolutionDir)..\..\3rd party\eax;$(SolutionDir)..\..\output\libraries;$(LibraryPath)</LibraryPath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\..\xray\xrLua\src;$(SolutionDir)..\..\3rd party\FreeImage\FreeImage\Source;$(SolutionDir)..\..\xray\xrCore;$(SolutionDir)..\..\3rd party\MagicSoftware\FreeMagic\Include;$(SolutionDir)..\..\3rd party\OpenAL\Include;$(SolutionDir)..\..\3rd party\luabind_old\luabind;$(SolutionDir)..\..\3rd party\loki;$(SolutionDir)..\..\3rd party\eax\Include;$(SolutionDir)..\..\3rd party\boost;$(WindowsSdkDir)include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(SolutionDir)..\..\3rd party\OpenAL\libs\Win32;$(SolutionDir)..\..\3rd party\eax;$(SolutionDir)..\..\output\libraries\Debug;$(LibraryPath);$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib</LibraryPath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\xray\xrLua\src;$(SolutionDir)..\..\3rd party\FreeImage\FreeImage\Source;$(SolutionDir)..\..\xray\xrCore;$(SolutionDir)..\..\3rd party\MagicSoftware\FreeMagic\Include;$(SolutionDir)..\..\3rd party\OpenAL\Include;$(SolutionDir)..\..\3rd party\luabind_old\luabind;$(SolutionDir)..\..\3rd party\loki;$(SolutionDir)..\..\3rd party\eax\Include;$(SolutionDir)..\..\3rd party\boost;$(WindowsSdkDir)include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(FrameworkSDKDir)\include</IncludePath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x64;$(SolutionDir)..\..\3rd party\OpenAL\libs\Win64;$(SolutionDir)..\..\3rd party\eax;$(SolutionDir)..\..\output\libraries\x64\Debug\;$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSdkDir)lib\x64</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
@@ -203,7 +177,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)default.tlb</TypeLibraryName>
+      <TypeLibraryName>$(OutDir)$(TargetName).tlb</TypeLibraryName>
       <HeaderFileName>default.h</HeaderFileName>
       <DllDataFileName>
       </DllDataFileName>
@@ -245,7 +219,6 @@
       </MapFileName>
       <SubSystem>Windows</SubSystem>
       <LargeAddressAware>true</LargeAddressAware>
-      <ImportLibrary>$(SolutionDir)..\..\output\libraries\Debug\$(ProjectName).lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
@@ -258,7 +231,7 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)default.tlb</TypeLibraryName>
+      <TypeLibraryName>$(OutDir)$(TargetName).tlb</TypeLibraryName>
       <HeaderFileName>default.h</HeaderFileName>
       <DllDataFileName>
       </DllDataFileName>
@@ -299,7 +272,6 @@
       </MapFileName>
       <SubSystem>Windows</SubSystem>
       <LargeAddressAware>true</LargeAddressAware>
-      <ImportLibrary>$(SolutionDir)..\..\output\libraries\x64\Debug\$(ProjectName).lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
       <Message>Performing registration</Message>
@@ -312,7 +284,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)default.tlb</TypeLibraryName>
+      <TypeLibraryName>$(OutDir)$(TargetName).tlb</TypeLibraryName>
       <HeaderFileName>default.h</HeaderFileName>
       <DllDataFileName>
       </DllDataFileName>
@@ -327,7 +299,7 @@
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>../../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;dSINGLE;MSVC;dNODEBUG;_SECURE_SCL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>
@@ -365,7 +337,6 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <ImportLibrary>$(SolutionDir)..\..\output\libraries\$(ProjectName).lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
@@ -379,7 +350,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)default.tlb</TypeLibraryName>
+      <TypeLibraryName>$(OutDir)$(TargetName).tlb</TypeLibraryName>
       <HeaderFileName>default.h</HeaderFileName>
       <DllDataFileName>
       </DllDataFileName>
@@ -432,7 +403,6 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <ImportLibrary>$(SolutionDir)..\..\output\libraries\$(ProjectName).lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
@@ -445,7 +415,7 @@
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)default.tlb</TypeLibraryName>
+      <TypeLibraryName>$(OutDir)$(TargetName).tlb</TypeLibraryName>
       <HeaderFileName>default.h</HeaderFileName>
       <DllDataFileName>
       </DllDataFileName>
@@ -498,7 +468,6 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <ImportLibrary>$(SolutionDir)..\..\output\libraries\x64\$(ProjectName).lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
       <Message>Performing registration</Message>
@@ -510,7 +479,7 @@
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)default.tlb</TypeLibraryName>
+      <TypeLibraryName>$(OutDir)$(TargetName).tlb</TypeLibraryName>
       <HeaderFileName>default.h</HeaderFileName>
       <DllDataFileName>
       </DllDataFileName>
@@ -563,7 +532,6 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <ImportLibrary>$(SolutionDir)..\..\output\libraries\$(ProjectName).lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
       <Message>Performing registration</Message>
@@ -576,7 +544,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)default.tlb</TypeLibraryName>
+      <TypeLibraryName>$(OutDir)$(TargetName).tlb</TypeLibraryName>
       <HeaderFileName>default.h</HeaderFileName>
       <DllDataFileName>
       </DllDataFileName>
@@ -615,13 +583,12 @@
     </ResourceCompile>
     <Link>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ModuleDefinitionFile>..\..\..\config\msvcdefs.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>..\..\config\msvcdefs.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <GenerateMapFile>false</GenerateMapFile>
       <MapFileName>$(OutDir)$(ProjectName).map</MapFileName>
       <SubSystem>Windows</SubSystem>
       <LargeAddressAware>true</LargeAddressAware>
-      <ImportLibrary>$(SolutionDir)..\..\output\libraries\$(ProjectName).lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
@@ -634,7 +601,7 @@
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)default.tlb</TypeLibraryName>
+      <TypeLibraryName>$(OutDir)$(TargetName).tlb</TypeLibraryName>
       <HeaderFileName>default.h</HeaderFileName>
       <DllDataFileName>
       </DllDataFileName>
@@ -673,13 +640,12 @@
     </ResourceCompile>
     <Link>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ModuleDefinitionFile>..\..\..\config\msvcdefs.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>..\..\config\msvcdefs.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <GenerateMapFile>false</GenerateMapFile>
       <MapFileName>$(OutDir)$(ProjectName).map</MapFileName>
       <SubSystem>Windows</SubSystem>
       <LargeAddressAware>true</LargeAddressAware>
-      <ImportLibrary>$(SolutionDir)..\..\output\libraries\$(ProjectName).lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
       <Message>Performing registration</Message>
@@ -687,56 +653,56 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\ode\src\array.h" />
-    <ClInclude Include="..\..\..\ode\src\Bounder33.h" />
-    <ClInclude Include="..\..\..\include\ode\collision.h" />
-    <ClInclude Include="..\..\..\ode\src\collision_kernel.h" />
-    <ClInclude Include="..\..\..\include\ode\collision_space.h" />
-    <ClInclude Include="..\..\..\ode\src\collision_space_internal.h" />
-    <ClInclude Include="..\..\..\ode\src\collision_std.h" />
-    <ClInclude Include="..\..\..\ode\src\collision_transform.h" />
-    <ClInclude Include="..\..\..\include\ode\collision_trimesh.h" />
-    <ClInclude Include="..\..\..\ode\src\collision_trimesh_internal.h" />
-    <ClInclude Include="..\..\..\ode\src\collision_util.h" />
-    <ClInclude Include="..\..\..\ode\src\geom_internal.h" />
-    <ClInclude Include="..\..\..\ode\src\joint.h" />
-    <ClInclude Include="..\..\..\ode\src\lcp.h" />
-    <ClInclude Include="..\..\..\ode\src\mat.h" />
-    <ClInclude Include="..\..\..\ode\src\objects.h" />
-    <ClInclude Include="..\..\..\ode\src\obstack.h" />
-    <ClInclude Include="..\..\..\include\ode\odecpp_collision.h" />
-    <ClInclude Include="..\..\..\ode\src\quickstep.h" />
-    <ClInclude Include="..\..\..\ode\src\stack.h" />
-    <ClInclude Include="..\..\..\ode\src\step.h" />
-    <ClInclude Include="..\..\..\ode\src\StepJointInternal.h" />
-    <ClInclude Include="..\..\..\ode\src\testing.h" />
-    <ClInclude Include="..\..\..\include\ode\common.h" />
-    <ClInclude Include="..\..\..\include\ode\compatibility.h" />
-    <ClInclude Include="..\..\..\include\ode\config.h" />
-    <ClInclude Include="..\..\..\include\ode\contact.h" />
-    <ClInclude Include="..\..\..\include\ode\error.h" />
-    <ClInclude Include="..\..\..\include\ode\export-dif.h" />
-    <ClInclude Include="..\..\..\include\ode\geom.h" />
-    <ClInclude Include="..\..\..\include\ode\mass.h" />
-    <ClInclude Include="..\..\..\include\ode\matrix.h" />
-    <ClInclude Include="..\..\..\include\ode\memory.h" />
-    <ClInclude Include="..\..\..\include\ode\misc.h" />
-    <ClInclude Include="..\..\..\include\ode\objects.h" />
-    <ClInclude Include="..\..\..\include\ode\ode.h" />
-    <ClInclude Include="..\..\..\include\ode\odecpp.h" />
-    <ClInclude Include="..\..\..\include\ode\odemath.h" />
-    <ClInclude Include="..\..\..\include\ode\rotation.h" />
-    <ClInclude Include="..\..\..\include\ode\space.h" />
-    <ClInclude Include="..\..\..\include\ode\timer.h" />
+    <ClInclude Include="..\..\ode\src\array.h" />
+    <ClInclude Include="..\..\ode\src\Bounder33.h" />
+    <ClInclude Include="..\..\include\ode\collision.h" />
+    <ClInclude Include="..\..\ode\src\collision_kernel.h" />
+    <ClInclude Include="..\..\include\ode\collision_space.h" />
+    <ClInclude Include="..\..\ode\src\collision_space_internal.h" />
+    <ClInclude Include="..\..\ode\src\collision_std.h" />
+    <ClInclude Include="..\..\ode\src\collision_transform.h" />
+    <ClInclude Include="..\..\include\ode\collision_trimesh.h" />
+    <ClInclude Include="..\..\ode\src\collision_trimesh_internal.h" />
+    <ClInclude Include="..\..\ode\src\collision_util.h" />
+    <ClInclude Include="..\..\ode\src\geom_internal.h" />
+    <ClInclude Include="..\..\ode\src\joint.h" />
+    <ClInclude Include="..\..\ode\src\lcp.h" />
+    <ClInclude Include="..\..\ode\src\mat.h" />
+    <ClInclude Include="..\..\ode\src\objects.h" />
+    <ClInclude Include="..\..\ode\src\obstack.h" />
+    <ClInclude Include="..\..\include\ode\odecpp_collision.h" />
+    <ClInclude Include="..\..\ode\src\quickstep.h" />
+    <ClInclude Include="..\..\ode\src\stack.h" />
+    <ClInclude Include="..\..\ode\src\step.h" />
+    <ClInclude Include="..\..\ode\src\StepJointInternal.h" />
+    <ClInclude Include="..\..\ode\src\testing.h" />
+    <ClInclude Include="..\..\include\ode\common.h" />
+    <ClInclude Include="..\..\include\ode\compatibility.h" />
+    <ClInclude Include="..\..\include\ode\config.h" />
+    <ClInclude Include="..\..\include\ode\contact.h" />
+    <ClInclude Include="..\..\include\ode\error.h" />
+    <ClInclude Include="..\..\include\ode\export-dif.h" />
+    <ClInclude Include="..\..\include\ode\geom.h" />
+    <ClInclude Include="..\..\include\ode\mass.h" />
+    <ClInclude Include="..\..\include\ode\matrix.h" />
+    <ClInclude Include="..\..\include\ode\memory.h" />
+    <ClInclude Include="..\..\include\ode\misc.h" />
+    <ClInclude Include="..\..\include\ode\objects.h" />
+    <ClInclude Include="..\..\include\ode\ode.h" />
+    <ClInclude Include="..\..\include\ode\odecpp.h" />
+    <ClInclude Include="..\..\include\ode\odemath.h" />
+    <ClInclude Include="..\..\include\ode\rotation.h" />
+    <ClInclude Include="..\..\include\ode\space.h" />
+    <ClInclude Include="..\..\include\ode\timer.h" />
     <ClInclude Include="de_padf_integration.h" />
-    <ClInclude Include="..\..\..\ode\src\Lcp33.h" />
-    <ClInclude Include="..\..\..\ode\src\util.h" />
+    <ClInclude Include="..\..\ode\src\Lcp33.h" />
+    <ClInclude Include="..\..\ode\src\util.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\ode\src\array.cpp" />
-    <ClCompile Include="..\..\..\ode\src\Bounder33.cpp" />
-    <ClCompile Include="..\..\..\ode\src\collision_kernel.cpp" />
-    <ClCompile Include="..\..\..\ode\src\collision_quadtreespace.cpp">
+    <ClCompile Include="..\..\ode\src\array.cpp" />
+    <ClCompile Include="..\..\ode\src\Bounder33.cpp" />
+    <ClCompile Include="..\..\ode\src\collision_kernel.cpp" />
+    <ClCompile Include="..\..\ode\src\collision_quadtreespace.cpp">
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Mixed|Win32'">4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -746,8 +712,8 @@
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|x64'">4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
-    <ClCompile Include="..\..\..\ode\src\collision_space.cpp" />
-    <ClCompile Include="..\..\..\ode\src\collision_std.cpp">
+    <ClCompile Include="..\..\ode\src\collision_space.cpp" />
+    <ClCompile Include="..\..\ode\src\collision_std.cpp">
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Mixed|Win32'">4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -757,36 +723,36 @@
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release_w_STLPORT|x64'">4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
-    <ClCompile Include="..\..\..\ode\src\collision_transform.cpp" />
-    <ClCompile Include="..\..\..\ode\src\collision_util.cpp" />
+    <ClCompile Include="..\..\ode\src\collision_transform.cpp" />
+    <ClCompile Include="..\..\ode\src\collision_util.cpp" />
     <ClCompile Include="de_padf_integration.cpp" />
-    <ClCompile Include="..\..\..\ode\src\error.cpp" />
-    <ClCompile Include="..\..\..\ode\src\export-dif.cpp" />
-    <ClCompile Include="..\..\..\ode\src\fastdot.c" />
-    <ClCompile Include="..\..\..\ode\src\fastldlt.c" />
-    <ClCompile Include="..\..\..\ode\src\fastlsolve.c" />
-    <ClCompile Include="..\..\..\ode\src\fastltsolve.c" />
-    <ClCompile Include="..\..\..\ode\src\joint.cpp" />
-    <ClCompile Include="..\..\..\ode\src\lcp.cpp" />
-    <ClCompile Include="..\..\..\ode\src\mass.cpp" />
-    <ClCompile Include="..\..\..\ode\src\mat.cpp" />
-    <ClCompile Include="..\..\..\ode\src\matrix.cpp" />
-    <ClCompile Include="..\..\..\ode\src\memory.cpp" />
-    <ClCompile Include="..\..\..\ode\src\misc.cpp" />
-    <ClCompile Include="..\..\..\ode\src\obstack.cpp" />
-    <ClCompile Include="..\..\..\ode\src\ode.cpp" />
-    <ClCompile Include="..\..\..\ode\src\odemath.cpp" />
-    <ClCompile Include="..\..\..\ode\src\quickstep.cpp" />
-    <ClCompile Include="..\..\..\ode\src\rotation.cpp" />
-    <ClCompile Include="..\..\..\ode\src\step.cpp" />
-    <ClCompile Include="..\..\..\ode\src\stepfast.cpp" />
-    <ClCompile Include="..\..\..\ode\src\StepJointInternal.cpp" />
-    <ClCompile Include="..\..\..\ode\src\testing.cpp" />
-    <ClCompile Include="..\..\..\ode\src\timer.cpp" />
-    <ClCompile Include="..\..\..\ode\src\util.cpp" />
+    <ClCompile Include="..\..\ode\src\error.cpp" />
+    <ClCompile Include="..\..\ode\src\export-dif.cpp" />
+    <ClCompile Include="..\..\ode\src\fastdot.c" />
+    <ClCompile Include="..\..\ode\src\fastldlt.c" />
+    <ClCompile Include="..\..\ode\src\fastlsolve.c" />
+    <ClCompile Include="..\..\ode\src\fastltsolve.c" />
+    <ClCompile Include="..\..\ode\src\joint.cpp" />
+    <ClCompile Include="..\..\ode\src\lcp.cpp" />
+    <ClCompile Include="..\..\ode\src\mass.cpp" />
+    <ClCompile Include="..\..\ode\src\mat.cpp" />
+    <ClCompile Include="..\..\ode\src\matrix.cpp" />
+    <ClCompile Include="..\..\ode\src\memory.cpp" />
+    <ClCompile Include="..\..\ode\src\misc.cpp" />
+    <ClCompile Include="..\..\ode\src\obstack.cpp" />
+    <ClCompile Include="..\..\ode\src\ode.cpp" />
+    <ClCompile Include="..\..\ode\src\odemath.cpp" />
+    <ClCompile Include="..\..\ode\src\quickstep.cpp" />
+    <ClCompile Include="..\..\ode\src\rotation.cpp" />
+    <ClCompile Include="..\..\ode\src\step.cpp" />
+    <ClCompile Include="..\..\ode\src\stepfast.cpp" />
+    <ClCompile Include="..\..\ode\src\StepJointInternal.cpp" />
+    <ClCompile Include="..\..\ode\src\testing.cpp" />
+    <ClCompile Include="..\..\ode\src\timer.cpp" />
+    <ClCompile Include="..\..\ode\src\util.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\config\msvcdefs.def" />
+    <None Include="..\..\config\msvcdefs.def" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

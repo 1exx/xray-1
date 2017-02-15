@@ -34,7 +34,7 @@
 #endif
 #define LUABIND_DONT_COPY_STRINGS
 
-#include "../xrCore/xrCore.h"
+#include "xrCore/xrCore.h"
 #include "../../build_config_defines.h"
 #include <boost/config.hpp>
 

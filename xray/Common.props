@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" Condition="'$(Platform)'=='Win32'">
+    <xrPlatform>Win32</xrPlatform>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" Condition="'$(Platform)'=='x86'">
+    <xrPlatform>Win32</xrPlatform>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" Condition="'$(Platform)'=='x64'">
+    <xrPlatform>Win64</xrPlatform>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" Condition="'$(xrPlatform)'==''">
+    <xrPlatform>$(Platform)</xrPlatform>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros">
+    <xrBinRootDir>$(SolutionDir)..\output\bin\</xrBinRootDir>
+    <xrLibRootDir>$(SolutionDir)..\output\lib\</xrLibRootDir>
+    <xrBinDir>$(SolutionDir)..\output\bin\$(xrPlatform)\$(Configuration)\</xrBinDir>
+    <xrPlugBinDir>$(SolutionDir)..\output\bin\$(xrPlatform)\$(Configuration)\plugins\</xrPlugBinDir>
+    <xrLibDir>$(SolutionDir)..\output\lib\$(xrPlatform)\$(Configuration)\</xrLibDir>
+    <xrIntDir>$(SolutionDir)..\output\intermediate\$(xrPlatform)\$(Configuration)\</xrIntDir>
+    <xrSdkDir>$(SolutionDir)..\sdk\</xrSdkDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(ConfigurationType)'=='Application'">
+    <OutDir>$(xrBinDir)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(ConfigurationType)'=='DynamicLibrary'">
+    <OutDir>$(xrBinDir)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(ConfigurationType)'=='StaticLibrary'">
+    <OutDir>$(xrLibDir)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IntDir>$(xrIntDir)$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(ProjectDir);$(xrSdkDir)include;$(DXSDK_DIR)Include;$(SolutionDir)luajit\src;$(SolutionDir)luabind;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(xrSdkDir)libraries;$(xrLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>$(xrLibDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(xrSdkDir)libraries;$(xrLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(xrLibDir)$(TargetName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+</Project>
