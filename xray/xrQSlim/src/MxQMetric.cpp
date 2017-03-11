@@ -73,8 +73,9 @@ MxMatrix& MxQuadric::homogeneous(MxMatrix& H) const
 
     unsigned int i, j;
 
-    for(i=0; i<A.dim(); i++)  for(j=0; j<A.dim(); i++)
-	H(i,j) = A(i,j);
+    for(i=0; i<A.dim(); i++)
+		for(j=0; j<A.dim(); j++)
+			H(i,j) = A(i,j);
 
     for(i=0; i<b.dim(); i++)
 	H(i, b.dim()) = H(b.dim(), i) = b[i];
