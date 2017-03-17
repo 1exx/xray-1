@@ -525,8 +525,9 @@ void	game_sv_Deathmatch::SM_SwitchOnNextActivePlayer()
 	u32		PossiblePlayers[32];
 	u32		cnt						= get_players_count	();
 	u32		PPlayersCount			= 0;
+	u32 it = 0;
 
-	for(u32 it=0; it<cnt; ++it)	
+	for( ; it<cnt; ++it)	
 	{
 		xrClientData *l_pC			= (xrClientData*)	m_server->client_Get(it);
 		game_PlayerState* ps		= l_pC->ps;

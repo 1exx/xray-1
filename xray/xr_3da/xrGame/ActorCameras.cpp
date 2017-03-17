@@ -150,6 +150,7 @@ void CActor::cam_Update(float dt, float fFOV)
 			Fvector src_pt,tgt_pt;
 			float radius		= point.y*0.5f;
 			float alpha			= r_torso_tgt_roll/2.f;
+			float angle = 0.f;
 			float dZ			= ((PI_DIV_2-((PI+alpha)/2)));
 			calc_point			(tgt_pt,radius,0,alpha);
 			src_pt.set			(0,tgt_pt.y,0);
@@ -189,7 +190,7 @@ void CActor::cam_Update(float dt, float fFOV)
 					da			= PI/1000.f;
 					if (!fis_zero(r_torso.roll))
 						da		*= r_torso.roll/_abs(r_torso.roll);
-					for (float angle=0.f; _abs(angle)<_abs(alpha); angle+=da)
+					for (; _abs(angle)<_abs(alpha); angle+=da)
 						if (test_point(xrc,xform,mat,ext,radius,angle)) { bIntersect=TRUE; break; } 
 						valid_angle	= bIntersect?angle:alpha;
 				} 
